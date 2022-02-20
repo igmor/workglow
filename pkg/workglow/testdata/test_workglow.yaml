@@ -1,0 +1,5 @@
+workglow:
+  name: test_workglow
+  steps:
+    initialize:
+      name: plugin/test.go
