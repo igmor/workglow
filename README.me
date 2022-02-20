@@ -18,9 +18,11 @@ workglow:
 
 All workglow steps are ran concurrently and simultaneously unless a step has
 an implicit dependency on output parameters of other steps, ie
+
 ```
 role_arn: ${example_workflow.initialize.arn}
 ```
+
 In this case the step is ran afer output parameter becomes available, ie
 after step runs that produce all the needed paramters.
 
