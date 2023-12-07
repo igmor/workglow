@@ -1,5 +1,5 @@
-workglow is a Go library for defining and running go workflows. Every step in the workglow
-should be mapped to a workglow Go handler, created in a way it accepts
+workglow is a Go library for defining and running Go workflows. Every step in the workglow
+should be mapped to a workflow Go handler, created in a way that accepts
 a subset of workglow step's named parameters as input arguments, i.e:
 
 ```
@@ -16,17 +16,17 @@ workglow:
       role_arn: ${example_workflow.initialize.arn} 
 ```
 
-All workglow steps are ran concurrently and simultaneously unless a step has
+All workglow steps are run concurrently and simultaneously unless a step has
 an implicit dependency on output parameters of other steps, ie
 
 ```
 role_arn: ${example_workflow.initialize.arn}
 ```
 
-In this case the step is ran afer output parameter becomes available, ie
-after step runs that produce all the needed paramters.
+In this case, the step is run afer output parameter becomes available, ie
+after step runs that produce all the necessary input parameters .
 
 Steps Go handlers are implemented as Go plugins with all the limitations for 
-this featutre. Please read https://pkg.go.dev/plugin for more information.
+this feature. Please read https://pkg.go.dev/plugin for more information.
 
 
